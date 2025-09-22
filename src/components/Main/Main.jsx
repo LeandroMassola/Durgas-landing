@@ -16,6 +16,26 @@ export default function Main() {
     const [isClicked, setIsClicked] = useState(false);
     const [imgPicked, setImgPicked] = useState('#')
     const [scrollY, setScrollY] = useState(null)
+    const [parallaxY, setParallaxY] = useState(0)
+
+    useEffect(() => {
+        let ticking = false;
+
+        const onScroll = () => {
+        const y = window.scrollY;
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                setParallaxY(y);
+                ticking = false;
+        });
+        ticking = true;
+            }
+        };
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll(); // valor inicial
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
 
     useEffect(()=> {
         if(isClicked) return;
@@ -39,7 +59,7 @@ export default function Main() {
                 <Header isWelcomeVisible={isWelcomeVisible} />
                 <Welcome isWelcomeVisible={isWelcomeVisible} setIsWelcomeVisible={setIsWelcomeVisible}/>
                 <Introduce />
-                <Story />
+                <Story parallaxY={parallaxY}/>
                 <Carousel scrollY={scrollY} setScrollY={setScrollY} imgPicked={imgPicked} setImgPicked={setImgPicked} isClicked={isClicked} setIsClicked={setIsClicked} />
             </div>
 

@@ -26,7 +26,7 @@ export default function Carousel({scrollY, setScrollY, setIsClicked, setImgPicke
     
     return(
         <section>
-            <div className="grid grid-cols-3">
+            <div className="grid grid-cols-3 gap-3 my-15">
                 {images.map((image, i)=> {
                     return(
                         <img key={i} onClick={handleClicked} className={``} id={i} src={image}/>
