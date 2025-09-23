@@ -7,6 +7,7 @@ import Story from "./Story/Story";
 import Carousel from "./Gallery/Carousel";
 import { MdKeyboardArrowRight as ArrowRight } from "react-icons/md";
 import { MdKeyboardArrowLeft as ArrowLeft } from "react-icons/md";
+import { useScroll } from "motion/react";
 
 
 
@@ -16,8 +17,11 @@ export default function Main() {
 
     const [isClicked, setIsClicked] = useState(false);
     const [imgPicked, setImgPicked] = useState(0)
-    const [scrollY, setScrollY] = useState(null)
+    /* const [scrollY, setScrollY] = useState(null) */
+    const [scroll, setScroll] = useState(0)
     const [parallaxY, setParallaxY] = useState(0)
+
+    const {scrollY} = useScroll()
 
     const images = [
     "images/durgas-1.jpg",
@@ -31,7 +35,7 @@ export default function Main() {
     "images/durgas-9.jpg",
 ]
 
-    useEffect(() => {
+    /* useEffect(() => {
         let ticking = false;
 
         const onScroll = () => {
@@ -48,20 +52,33 @@ export default function Main() {
         window.addEventListener("scroll", onScroll, { passive: true });
         onScroll(); // valor inicial
         return () => window.removeEventListener("scroll", onScroll);
-    }, []);
+    }, []); */
 
     useEffect(()=> {
+        if (isClicked) {
+            document.body.style.overflow = "hidden";
+        } else {
+                document.body.style.overflow = "";
+        }
+        return scrollY.on("change", (latest)=> {
+            if(!isClicked) {
+                setScroll(latest)
+            }
+        })
+    }, [scrollY, isClicked])
+    
+    
+    /* useEffect(()=> {
         if(isClicked) return;
-        if(scrollY==null) return
-        window.scrollTo({top:scrollY, behavior:"smooth"})
+       
 
-    }, [isClicked, scrollY])
+    }, [isClicked, scroll]) */
 
     
 
     function toggleClick() {
         setIsClicked(false)
-        setScrollY(window.scrollY)
+        window.scrollTo({top:scroll, behavior:"smooth"})
     }
 
     function nextImg() {
@@ -71,13 +88,12 @@ export default function Main() {
     }
 
     function prevImg() {
-        
         setImgPicked(imgPicked=> imgPicked - 1)
         console.log(imgPicked)
     }
 
     return(
-        <div className={`${isClicked?"fixed overflow-hidden": "relative"}`}>
+        <div className={`relative`}>
             {isClicked && (
                 <div className="absolute inset-0 bg-gray-500/50 backdrop-blur-sm z-20"></div>
             )}
@@ -87,7 +103,7 @@ export default function Main() {
                 <Welcome isWelcomeVisible={isWelcomeVisible} setIsWelcomeVisible={setIsWelcomeVisible}/>
                 <Introduce />
                 <Story parallaxY={parallaxY}/>
-                <Carousel images={images} scrollY={scrollY} setScrollY={setScrollY} imgPicked={imgPicked} setImgPicked={setImgPicked} isClicked={isClicked} setIsClicked={setIsClicked} />
+                <Carousel images={images} scrollY={scrollY} setScroll={setScroll} imgPicked={imgPicked} setImgPicked={setImgPicked} isClicked={isClicked} setIsClicked={setIsClicked} />
             </div>
 
             {isClicked && imgPicked !== null && 
