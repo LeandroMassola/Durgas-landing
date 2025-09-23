@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Header from "./Header/Header";
 import Welcome from "./Hero/Welcome";
 import LogoDurgas from "./LogoDurgas";
 import Introduce from "./Hero/Introduce";
 import Story from "./Story/Story";
 import Carousel from "./Gallery/Carousel";
-import { style } from "motion/react-client";
+import { MdKeyboardArrowRight as ArrowRight } from "react-icons/md";
+import { MdKeyboardArrowLeft as ArrowLeft } from "react-icons/md";
 
 
 
@@ -14,9 +15,21 @@ export default function Main() {
     const [isWelcomeVisible, setIsWelcomeVisible] = useState(true)
 
     const [isClicked, setIsClicked] = useState(false);
-    const [imgPicked, setImgPicked] = useState('#')
+    const [imgPicked, setImgPicked] = useState(0)
     const [scrollY, setScrollY] = useState(null)
     const [parallaxY, setParallaxY] = useState(0)
+
+    const images = [
+    "images/durgas-1.jpg",
+    "images/durgas-2.jpg",
+    "images/durgas-3.jpg",
+    "images/durgas-4.jpg",
+    "images/durgas-5.jpg",
+    "images/durgas-6.jpg",
+    "images/durgas-7.jpg",
+    "images/durgas-8.jpg",
+    "images/durgas-9.jpg",
+]
 
     useEffect(() => {
         let ticking = false;
@@ -44,9 +57,23 @@ export default function Main() {
 
     }, [isClicked, scrollY])
 
-    function toglleClicks() {
+    
+
+    function toggleClick() {
         setIsClicked(false)
+        setScrollY(window.scrollY)
+    }
+
+    function nextImg() {
         
+        setImgPicked(imgPicked=> imgPicked + 1)
+        console.log(imgPicked)
+    }
+
+    function prevImg() {
+        
+        setImgPicked(imgPicked=> imgPicked - 1)
+        console.log(imgPicked)
     }
 
     return(
@@ -60,12 +87,21 @@ export default function Main() {
                 <Welcome isWelcomeVisible={isWelcomeVisible} setIsWelcomeVisible={setIsWelcomeVisible}/>
                 <Introduce />
                 <Story parallaxY={parallaxY}/>
-                <Carousel scrollY={scrollY} setScrollY={setScrollY} imgPicked={imgPicked} setImgPicked={setImgPicked} isClicked={isClicked} setIsClicked={setIsClicked} />
+                <Carousel images={images} scrollY={scrollY} setScrollY={setScrollY} imgPicked={imgPicked} setImgPicked={setImgPicked} isClicked={isClicked} setIsClicked={setIsClicked} />
             </div>
 
-            {isClicked && imgPicked && 
-                <div onClick={toglleClicks} className="fixed inset-0 z-50 items-center flex justify-center">
-                    <img className="max-w-[90vw] max-h-[90vh] z-50 rounded-xl shadow-2xl" src={imgPicked} alt="img"/>
+            {isClicked && imgPicked !== null && 
+                <div className="fixed inset-0 z-50 items-center flex justify-center flex-col">
+
+                    <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={toggleClick}/>
+
+                    <div className="relative inset-0 z-50 items-center flex justify-center flex-col">
+                        <img className="max-w-[90vw] max-h-[90vh] z-50 rounded-xl shadow-2xl" src={images[imgPicked]} alt="img"/>
+                    </div>
+                    <div className="flex w-[80%] z-50 mt-10 justify-around" >
+                            <ArrowLeft onClick={prevImg} className="text-[var(--afterglow)]  " size={35}/>
+                            <ArrowRight onClick={nextImg} className="text-[var(--afterglow)] " size={35}/>
+                    </div>
                 </div>
             }
         </div>

@@ -1,42 +1,40 @@
-import { useState } from "react";
-
-
-const images = [
-    "images/durgas-1.jpg",
-    "images/durgas-2.jpg",
-    "images/durgas-3.jpg",
-    "images/durgas-4.jpg",
-    "images/durgas-5.jpg",
-    "images/durgas-6.jpg",
-    "images/durgas-7.jpg",
-    "images/durgas-8.jpg",
-    "images/durgas-9.jpg",
-]
+import { useEffect, useState } from "react";
+import {motion} from "framer-motion"
 
 
 
-export default function Carousel({scrollY, setScrollY, setIsClicked, setImgPicked}) {
-    function handleClicked(e) {
-        setIsClicked(true)
-        setImgPicked(e.target.src)
+
+
+export default function Carousel({scrollY, setScrollY, setIsClicked, setImgPicked, images}) {
+
+    useEffect(()=> {
         setScrollY(window.scrollY)
-        console.log(e.target)
+    },[])
+
+    function handleClicked(i) {
+        setIsClicked(true)
+        setImgPicked(i)
     }
 
     
     return(
-        <section>
-            <div className="grid grid-cols-3 gap-3 my-15">
+        <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:3, delay:0.7}} className="w-full h-full px-5 py-1 z-50 relative bg-[var(--lavenderLight)]">
+            <div className="absolute inset-0 w-full h-full bg-[var(--andorra)]/40 z-0"/>
+            <div className="grid z-50 grid-cols-3 gap-3 my-15">
                 {images.map((image, i)=> {
                     return(
-                        <img key={i} onClick={handleClicked} className={``} id={i} src={image}/>
+                        
+                        <img key={i} onClick={()=>handleClicked(i)} className={`z-50`} id={i} src={image}/>
+                            
+                        
+                        
                     )
                 })}
             </div>
             {/* <div className={`${!isClicked ? "hidden" : "fixed inset-0 z-50 items-center flex justify-center"}`}>
                 <img className="max-w-[90vw] max-h-[90vh] z-50 rounded-xl shadow-2xl" src={imgPicked}/>
             </div> */}
-        </section>
+        </motion.div>
 
 
     )
