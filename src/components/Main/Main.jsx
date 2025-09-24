@@ -8,6 +8,7 @@ import Carousel from "./Gallery/Carousel";
 import { MdKeyboardArrowRight as ArrowRight } from "react-icons/md";
 import { MdKeyboardArrowLeft as ArrowLeft } from "react-icons/md";
 import { useScroll } from "motion/react";
+import Form from "./Contact/Form";
 
 
 
@@ -104,12 +105,13 @@ export default function Main() {
                 <Introduce />
                 <Story parallaxY={parallaxY}/>
                 <Carousel images={images} scrollY={scrollY} setScroll={setScroll} imgPicked={imgPicked} setImgPicked={setImgPicked} isClicked={isClicked} setIsClicked={setIsClicked} />
+                <Form/>
             </div>
 
             {isClicked && imgPicked !== null && 
                 <div className="fixed inset-0 z-50 items-center flex justify-center flex-col">
 
-                    <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={toggleClick}/>
+                    <div className="absolute inset-0 bg-[var(--lavenderLight)]/50 backdrop-blur-sm" onClick={toggleClick}/>
 
                     <div className="relative inset-0 z-50 items-center flex justify-center flex-col">
                         <img className="max-w-[90vw] max-h-[90vh] z-50 rounded-xl shadow-2xl" src={images[imgPicked]} alt="img"/>
