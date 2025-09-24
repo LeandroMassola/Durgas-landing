@@ -14,7 +14,7 @@ import Form from "./Contact/Form";
 
 
 export default function Main() {
-    const [isWelcomeVisible, setIsWelcomeVisible] = useState(true)
+    const [isWelcomeVisible, setIsWelcomeVisible] = useState(false)
 
     const [isClicked, setIsClicked] = useState(false);
     const [imgPicked, setImgPicked] = useState(0)
@@ -101,7 +101,7 @@ export default function Main() {
 
             <div className="relative z-10">
                 <Header isWelcomeVisible={isWelcomeVisible} />
-                <Welcome isWelcomeVisible={isWelcomeVisible} setIsWelcomeVisible={setIsWelcomeVisible}/>
+                {/* <Welcome isWelcomeVisible={isWelcomeVisible} setIsWelcomeVisible={setIsWelcomeVisible}/> */}
                 <Introduce />
                 <Story parallaxY={parallaxY}/>
                 <Carousel images={images} scrollY={scrollY} setScroll={setScroll} imgPicked={imgPicked} setImgPicked={setImgPicked} isClicked={isClicked} setIsClicked={setIsClicked} />
