@@ -23,7 +23,7 @@ export default function Story({parallaxY}) {
 
             {/* Capa alta */}
 
-            <motion.div className="absolute h-[120%] inset-0 bg-[var(--lavender)] filter blur-xs" initial={{opacity:0}} animate={{opacity:0.5}} transition={{duration:10, delay:5}}/>
+            <motion.div className="absolute h-[120%] inset-0 bg-[url('/durgas-abrazo.png')] bg-no-repeat bg-contain bg-center bg-fixed" initial={{opacity:0}} animate={{opacity:0.5}} transition={{duration:10, delay:5}}/>
 
             <article className="relative z-10">
                 <div className="mb-20 text-[var(--andorra)]">

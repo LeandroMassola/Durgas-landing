@@ -7,7 +7,7 @@ export default function Introduce() {
     return (
         <section className="relative flex flex-col items-center bottom-5 justify-center min-h-screen">
 
-            <div className="absolute  inset-0 inset-y-[-10%] bg-[url('/images/durgas-home.jpeg')] bg-no-repeat bg-center bg-cover bg-fixed filter brightness-80 contrast-70 opacity-80 "></div>
+            <div className="absolute  inset-0 inset-y-[-10%] bg-[url('/durgas-video-1.png')] bg-no-repeat bg-center bg-cover bg-fixed filter brightness-80 contrast-70 opacity-80 "></div>
             
             {/* overlay para contraste */}
             <div className="absolute inset-0  z-0"></div>
