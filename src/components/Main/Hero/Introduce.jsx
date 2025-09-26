@@ -2,19 +2,21 @@ import { FaYoutube } from "react-icons/fa";
 import { FaSpotify } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import LogoDurgas from "../LogoDurgas";
-export default function Introduce() {
+import {motion} from "framer-motion"
+
+export default function Introduce({burgerClicked, setBurgerClicked}) {
 
     return (
-        <section className="relative flex flex-col items-center bottom-5 justify-center min-h-screen">
+        <motion.section initial={{opacity:0}} whileInView={{opacity:[0.3, 0.5, 0.7, 0.8, 1]}} transition={{duration:0.7, delay:0, ease:"easeInOut"}} className={`relative flex flex-col items-center bottom-5 justify-center min-h-screen`}>
 
             <div className="absolute  inset-0 inset-y-[-10%] bg-[url('/durgas-video-1.png')] bg-no-repeat bg-center bg-cover bg-fixed filter brightness-80 contrast-70 opacity-80 "></div>
             
             {/* overlay para contraste */}
-            <div className="absolute inset-0  z-0"></div>
+            <div className="absolute inset-0 opacity-75 inset-y-[-10%] z-0 bg-gradient-to-t from-[var(--andorra)]/80 via-[var(--sudanBrown)] to-[var(--spectraYellow)] mix-blend-overlay"></div>
 
 
             <div className="z-50 flex relative bottom-30 flex-col items-center justify-center">
-                <LogoDurgas color="text-[var(--andorra)]"/>
+                <LogoDurgas color="text-[var(--afterglow)]"/>
 
                 <h1 className=" bottom-50 z-10 text-[2rem] text-center text-[var(--afterglow)]">
                     Ensamble femenino de percusión latinoamericana
@@ -27,6 +29,6 @@ export default function Introduce() {
                 </div>
 
             </div>
-        </section>
+        </motion.section>
     );
 }
