@@ -9,6 +9,8 @@ import { MdKeyboardArrowRight as ArrowRight } from "react-icons/md";
 import { MdKeyboardArrowLeft as ArrowLeft } from "react-icons/md";
 import { useScroll } from "motion/react";
 import Form from "./Contact/Form";
+import Burger from "./Header/Burger";
+import NavBar from "./Header/NavBar";
 
 
 
@@ -100,24 +102,12 @@ export default function Main() {
             {(isClicked || burgerClicked) &&(
                 <div className="absolute inset-0 bg-gray-500/50 backdrop-blur-sm z-20"></div>
             )}
-            <nav className={`absolute z-30 px-0 w-full gap-5 right-0 top-1 transition-all duration-750 ease-in-out  ${burgerClicked ? " w-[100%] max-h-96 overflow-hidden opacity-100 pointer-events-auto z-40" : "max-h-0 opacity-0 overflow-hidden pointer-events-none z-30 "}`}>
+            
+            
+            {burgerClicked && <NavBar burgerClicked={burgerClicked}/>}
+            <Burger burgerClicked={burgerClicked} setBurgerClicked={setBurgerClicked}/>
 
-                <ul className={`relative bottom-25  flex flex-col pr-5 mt-20 items-center justify-center gap-5 text-[var(--afterglow)] px-7.5 py-30 rounded-md bg-[var(--andorra)]/70  ${burgerClicked && "flex flex-col z-10 w-[100%] "}`}>
-
-                    <li>
-                        <a href="">Galería</a>
-                    </li>
-                    <li>
-                        <a href="">Historia</a>
-                    </li>
-                    <li>
-                        <a href="">Contacto</a>
-                    </li>
-                    
-                </ul>
-            </nav>
-
-            <div className="relative z-10 ">
+            <div className="relative bottom-10 z-10 ">
                 <Header burgerClicked={burgerClicked} setBurgerClicked={setBurgerClicked} isWelcomeVisible={isWelcomeVisible} />
                 {/* <Welcome isWelcomeVisible={isWelcomeVisible} setIsWelcomeVisible={setIsWelcomeVisible}/> */}
                 <Introduce burgerClicked={burgerClicked} setBurgerClicked={setBurgerClicked} />

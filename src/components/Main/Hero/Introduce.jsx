@@ -15,10 +15,10 @@ export default function Introduce({burgerClicked, setBurgerClicked}) {
             <div className="absolute inset-0 opacity-75 inset-y-[-10%] z-0 bg-gradient-to-t from-[var(--andorra)]/80 via-[var(--sudanBrown)] to-[var(--spectraYellow)] mix-blend-overlay"></div>
 
 
-            <div className="z-50 flex relative bottom-30 flex-col items-center justify-center">
-                <LogoDurgas color="text-[var(--afterglow)]"/>
+            <div className="z-50 flex relative bottom-30 flex-col items-center  pb-4 justify-center bg-[var(--andorra)]/40">
+                <LogoDurgas color="text-[var(--spectraYellow)]"/>
 
-                <h1 className=" bottom-50 z-10 text-[2rem] text-center text-[var(--afterglow)]">
+                <h1 className=" bottom-50 z-10 text-[2rem] text-center text-[var(--spectraYellow)]">
                     Ensamble femenino de percusión latinoamericana
                 </h1>
 

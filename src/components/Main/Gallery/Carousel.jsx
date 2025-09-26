@@ -21,7 +21,7 @@ export default function Carousel({scrollY, setScroll, setIsClicked, setImgPicked
             <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:1, delay:0.7}} className="grid z-50 grid-cols-3 gap-3 my-15">
                 {images.map((image, i)=> {
                     return(
-                        <motion.img initial={{scaleY:0, scaleZ:0}} whileInView={{scaleY:1, scaleZ:1}} transition={{duration:0.7, delay:0.5}} key={i} onClick={()=>handleClicked(i)} className={`z-50 rounded-lg shadow-[#F3E6C9] shadow-sm `} id={i} src={image}/>
+                        <motion.img initial={{scaleY:0, scaleZ:0}} whileInView={{scaleY:1, scaleZ:1}} transition={{duration:0.7, delay:0.5}} key={i} onClick={()=>handleClicked(i)} className={`z-50 rounded-lg shadow-[#F3E6C9] shadow-sm aspect-square w-[100%] h-auto`} id={i} src={image}/>
                     )
                 })}
             </motion.div>
