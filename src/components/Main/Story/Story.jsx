@@ -7,7 +7,7 @@ export default function Story({parallaxY}) {
 
 
     return(
-        <section className=" pt-30 relative min-h-screen overflow-hidden">
+        <section name={"history"} className="sm:p-7 pt-30 relative min-h-screen overflow-hidden">
 
 
             {/* Capa trasera */}
@@ -25,7 +25,7 @@ export default function Story({parallaxY}) {
 
             <motion.div className="absolute h-[150%] inset-0 bg-[url('/durgas-abrazo.png')] bg-no-repeat bg-cover bg-center bg-fixed" initial={{opacity:0}} animate={{opacity:0.5}} transition={{duration:0.7, delay:1}}/>
 
-            <article className="relative z-10 pt-15 bg-black/30 mb-25 pb-15">
+            <article className="relative z-10 pt-15 rounded-md bg-black/30 mb-25 pb-15">
                 <div className="mb-20 text-[var(--afterglow)]">
                     <h1 className="text-7xl text-center px-3 tracking-wide">¿Quiénes son Las Durgas?</h1>
                 </div>

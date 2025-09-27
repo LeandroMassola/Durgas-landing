@@ -10,7 +10,6 @@ import { MdKeyboardArrowLeft as ArrowLeft } from "react-icons/md";
 import { useScroll } from "motion/react";
 import Form from "./Contact/Form";
 import Burger from "./Header/Burger";
-import NavBar from "./Header/NavBar";
 
 
 
@@ -98,17 +97,17 @@ export default function Main() {
     }
 
     return(
-        <div className={`relative`}>
+        <div className={`absolute`}>
             {(isClicked || burgerClicked) &&(
-                <div className="absolute inset-0 bg-gray-500/50 backdrop-blur-sm z-20"></div>
+                <div className="absolute inset-0 bg-gray-500/50 backdrop-blur-sm z-50"></div>
             )}
             
             
-            {burgerClicked && <NavBar burgerClicked={burgerClicked}/>}
+            {/* {burgerClicked && <NavBar burgerClicked={burgerClicked} setBurgerClicked={setBurgerClicked}/>} */}
             <Burger burgerClicked={burgerClicked} setBurgerClicked={setBurgerClicked}/>
 
-            <div className="relative bottom-10 z-10 ">
-                <Header burgerClicked={burgerClicked} setBurgerClicked={setBurgerClicked} isWelcomeVisible={isWelcomeVisible} />
+            <div className="relative z-40 ">
+                {/* <Header burgerClicked={burgerClicked} setBurgerClicked={setBurgerClicked} isWelcomeVisible={isWelcomeVisible} /> */}
                 {/* <Welcome isWelcomeVisible={isWelcomeVisible} setIsWelcomeVisible={setIsWelcomeVisible}/> */}
                 <Introduce burgerClicked={burgerClicked} setBurgerClicked={setBurgerClicked} />
                 <Story parallaxY={parallaxY}/>
