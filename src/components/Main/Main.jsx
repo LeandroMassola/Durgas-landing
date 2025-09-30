@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import {motion} from "framer-motion"
 import Header from "./Header/Header";
 import Welcome from "./Hero/Welcome";
 import LogoDurgas from "./LogoDurgas";
@@ -116,17 +117,18 @@ export default function Main() {
             </div>
 
             {isClicked && imgPicked !== null && 
-                <div className="fixed inset-0 z-50 items-center flex justify-center flex-col">
+                <div className="fixed inset-0 z-50 items-center flex justify-center flex-col ">
 
                     <div className="absolute inset-0 bg-[var(--lavenderLight)]/50 backdrop-blur-sm" onClick={toggleClick}/>
 
-                    <div className="relative inset-0 z-50 items-center flex justify-center flex-col">
-                        <img className="max-w-[90vw] max-h-[90vh] z-50 rounded-xl shadow-2xl" src={images[imgPicked]} alt="img"/>
+                    <div className="relative inset-0 z-50 items-center flex justify-center gap-3 lg:gap-20">
+                        <motion.button whileHover={{x:"-10px"}} className="cursor-pointer"><ArrowLeft onClick={prevImg} className="text-[var(--afterglow)]  lg:size-25  " size={35}/></motion.button>
+                        <img className="max-w-[75vw] max-h-[90vh] z-50 rounded-xl shadow-2xl lg:max-w-[85vw]" src={images[imgPicked]} alt="img"/>
+                        <motion.button whileHover={{x:"10px"}} className="cursor-pointer"><ArrowRight onClick={nextImg} className="text-[var(--afterglow)]  lg:size-25 " size={35}/></motion.button>
                     </div>
-                    <div className="flex w-[80%] z-50 mt-10 justify-around" >
-                            <ArrowLeft onClick={prevImg} className="text-[var(--afterglow)]  " size={35}/>
-                            <ArrowRight onClick={nextImg} className="text-[var(--afterglow)] " size={35}/>
-                    </div>
+                    {/* <div className="flex w-[80%] z-50 mt-10 justify-around" >
+                            
+                    </div> */}
                 </div>
             }
         </div>

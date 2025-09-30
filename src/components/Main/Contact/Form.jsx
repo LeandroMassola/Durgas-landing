@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+import {motion} from "framer-motion"
 
 export default function Form() {
 
@@ -63,29 +63,29 @@ export default function Form() {
             <form className="relative mt-20 flex flex-col justify-center items-center" method="POST" action="#" onSubmit={handleSubmit}>
                 <div  className="flex flex-col justify-center items-center gap-3 w-full h-full">
                     <label className="flex text-[var(--afterglow)] tracking-widest font-extralight text-lg flex-col text-center sm:text-xl" htmlFor="name">Nombre
-                        <input className="w-[80%] ml-5 py-3 px-5 outline-1 outline-[var(--sudanBrown)] text-[var(--andorra)]  bg-gray-100 rounded-md focus:drop-shadow-sm focus:drop-shadow-[#AC6C29] focus:ouline-5 focus:outline-white focus:bg-white" onChange={handleChange} type="text" name="name" placeholder="Nombre" />
+                        <motion.input whileFocus={{backgroundColor:"var(--afterglow)", boxShadow:"0 0 0 5px var(--afterglow)"}} whileHover={{outline:"2px solid var(--afterglow)", boxShadow:"0 0 0 3px var(--afterglow)", backgroundColor:"var(--afterglow)"}} className="w-[80%] ml-5 py-3 px-5 outline-none text-[var(--andorra)] border-none  bg-gray-300 rounded-md" onChange={handleChange} type="text" name="name" placeholder="Nombre" />
                     </label>
 
                     <label className="flex text-[var(--afterglow)] tracking-widest font-extralight text-lg flex-col text-center sm:text-xl" htmlFor="surname">Apellido
-                        <input className="w-[80%] ml-5 py-3 px-5 outline-1 outline-[var(--sudanBrown)] text-[var(--andorra)]  bg-gray-100 rounded-md focus:drop-shadow-sm focus:drop-shadow-[#AC6C29] focus:ouline-5 focus:outline-white focus:bg-white" onChange={handleChange} type="text" name="surname" placeholder="Apellido" />
+                        <motion.input whileFocus={{backgroundColor:"var(--afterglow)", boxShadow:"0 0 0 5px var(--afterglow)"}} whileHover={{outline:"2px solid var(--afterglow)", boxShadow:"0 0 0 3px var(--afterglow)", backgroundColor:"var(--afterglow)"}} className="w-[80%] ml-5 py-3 px-5 outline-none text-[var(--andorra)] border-none  bg-gray-300 rounded-md" onChange={handleChange} type="text" name="surname" placeholder="Apellido" />
                     </label>
 
                     <label className="flex text-[var(--afterglow)] tracking-widest font-extralight text-lg flex-col text-center sm:text-xl" htmlFor="mail">Mail
-                        <input className="w-[80%] ml-5 py-3 px-5 outline-1 outline-[var(--sudanBrown)] text-[var(--andorra)]  bg-gray-100 rounded-md focus:drop-shadow-sm focus:drop-shadow-[#AC6C29] focus:ouline-5 focus:outline-white focus:bg-white" onChange={handleChange} type="email" name="mail" placeholder="Mail" />
+                        <motion.input whileFocus={{backgroundColor:"var(--afterglow)", boxShadow:"0 0 0 5px var(--afterglow)"}} whileHover={{outline:"2px solid var(--afterglow)", boxShadow:"0 0 0 3px var(--afterglow)", backgroundColor:"var(--afterglow)"}} className="w-[80%] ml-5 py-3 px-5 outline-none text-[var(--andorra)] border-none  bg-gray-300 rounded-md" onChange={handleChange} type="email" name="mail" placeholder="Mail" />
                     </label>
 
                     <label className="flex text-[var(--afterglow)] tracking-widest font-extralight text-lg flex-col text-center sm:text-xl" htmlFor="subject">Asunto
-                        <input className="w-[80%] ml-5 py-3 px-5 outline-1 outline-[var(--sudanBrown)] text-[var(--andorra)]  bg-gray-100 rounded-md focus:drop-shadow-sm focus:drop-shadow-[#AC6C29] focus:ouline-5 focus:outline-white focus:bg-white" onChange={handleChange} type="text" name="subject" placeholder="Asunto" />
+                        <motion.input whileFocus={{backgroundColor:"var(--afterglow)", boxShadow:"0 0 0 5px var(--afterglow)"}} whileHover={{outline:"2px solid var(--afterglow)", boxShadow:"0 0 0 3px var(--afterglow)", backgroundColor:"var(--afterglow)"}} className="w-[80%] ml-5 py-3 px-5 outline-none text-[var(--andorra)] border-none  bg-gray-300 rounded-md" onChange={handleChange} type="text" name="subject" placeholder="Asunto" />
                     </label>
 
                     <label className="flex text-[var(--afterglow)] tracking-widest font-extralight text-lg flex-col text-center sm:text-xl" htmlFor="message">Mensaje
-                        <textarea className="w-[80%] ml-5 py-3 px-5 outline-1 outline-[var(--sudanBrown)] text-[var(--andorra)]  bg-gray-100 rounded-md focus:drop-shadow-sm focus:drop-shadow-[#AC6C29] focus:ouline-5 focus:outline-white focus:bg-white" onChange={handleChange} name="message" placeholder="Mensaje" />
+                        <motion.textarea whileFocus={{backgroundColor:"var(--afterglow)", boxShadow:"0 0 0 5px var(--afterglow)"}} whileHover={{outline:"2px solid var(--afterglow)", boxShadow:"0 030 5px var(--afterglow)", backgroundColor:"var(--afterglow)"}} className="w-[80%] ml-5 py-3 px-5 outline-none text-[var(--andorra)] border-none  bg-gray-300 rounded-md" onChange={handleChange} name="message" placeholder="Mensaje" />
                     </label>
                 </div>
 
                 <div className="flex px-15 mt-20 justify-center gap-20 items-center">
-                    <button className="text-xl w-full border-1 px-5 py-1 pt-2.5 mt-5 mr-12 rounded-sm bg-[var(--andorra)] text-[var(--afterglow)] active:bg-[var(--afterglow)] active:text-[var(--andorra)]" type="submit">Enviar</button>
-                    <button className="text-xl w-full border-1 px-5 py-1 pt-2.5 mt-5 rounded-sm bg-[var(--afterglow)] active:bg-[var(--andorra)] active:text-[var(--afterglow)]" type="reset">Limpiar</button>
+                    <motion.button whileHover={{scale:1.2, backgroundColor:"var(--afterglow)", color:"var(--andorra)", borderColor:"var(--andorra)"}} className="text-xl w-full border-1 px-5 py-1 pt-2.5 mt-5 mr-12 rounded-sm cursor-pointer bg-[var(--andorra)] text-[var(--afterglow)] active:bg-[var(--afterglow)] active:text-[var(--andorra)]" type="submit">Enviar</motion.button>
+                    <motion.button whileHover={{scale:1.2, backgroundColor:"var(--andorra)", color:"var(--afterglow)"}} className="text-xl w-full border-1 px-5 py-1 pt-2.5 mt-5 rounded-sm cursor-pointer bg-[var(--afterglow)] active:bg-[var(--andorra)] active:text-[var(--afterglow)]" type="reset">Limpiar</motion.button>
                 </div>
             </form>
         </section>

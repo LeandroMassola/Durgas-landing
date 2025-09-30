@@ -27,21 +27,21 @@ export default function Story({parallaxY}) {
 
             <article className="relative z-10 px-20 py-15 rounded-md bg-black/30 mb-25 pb-15">
                 <div className="mb-20 text-[var(--afterglow)] lg:mt-20 lg:mb-20">
-                    <h1 className="text-7xl text-center px-3 tracking-wide">¿Quiénes son Las Durgas?</h1>
+                    <h1 className="text-7xl text-center px-3 tracking-wide lg:text-8xl">¿Quiénes son Las Durgas?</h1>
                 </div>
                 <motion.div initial={{opacity:0}} whileInView={{opacity:1}} viewport={{once:false}} transition={{duration:2, delay:1}} className="flex flex-col gap-5 text-[var(--afterglow)] text-2xl px-5 tracking-wider">
-                    <motion.p initial={{opacity:0}} whileInView={{opacity:1}}
+                    <motion.p className="lg:text-3xl" initial={{opacity:0}} whileInView={{opacity:1}}
                         transition={{duration:2, delay:1}}>
                         Nacido en la ciudad de Mar del Plata, el grupo surge a partir del encuentro de siete mujeres unidas por la pasión por el ritmo y la memoria de los pueblos. Sus primeros ensayos fueron pequeñas reuniones comunitarias que, con el tiempo, se transformaron en un ensamble sólido y potente.
                     </motion.p >
 
-                    <motion.p initial={{opacity:0}} whileInView={{opacity:1}}
+                    <motion.p className="lg:text-3xl" initial={{opacity:0}} whileInView={{opacity:1}}
                         transition={{duration:2, delay:1}}>
                         La propuesta artística combina la riqueza de la percusión latinoamericana con influencias directas de las tradiciones originarias de Sudamérica. Tambores, semillas, maderas y cantos se entrelazan para crear un sonido que no solo busca hacer vibrar al público, sino también transmitir historias, luchas y celebraciones que forman parte de la identidad cultural de la región.
 
                     </motion.p >
                     
-                    <motion.p initial={{opacity:0}} whileInView={{opacity:1}}
+                    <motion.p className="lg:text-3xl" initial={{opacity:0}} whileInView={{opacity:1}}
                         transition={{duration:2, delay:1}}>
                         Cada presentación es un viaje sonoro que evoca rituales ancestrales y al mismo tiempo dialoga con lo contemporáneo. El ensamble apuesta a la fuerza colectiva, la diversidad de voces y la energía compartida, consolidándose como un proyecto musical que trasciende lo artístico para convertirse en un espacio de encuentro y resistencia.
                     </motion.p >
