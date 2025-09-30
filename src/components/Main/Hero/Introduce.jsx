@@ -7,7 +7,7 @@ import {motion} from "framer-motion"
 export default function Introduce({burgerClicked, setBurgerClicked}) {
 
     return (
-        <motion.section initial={{opacity:0}} whileInView={{opacity:[0.3, 0.5, 0.7, 0.8, 1]}} transition={{duration:0.7, delay:0, ease:"easeInOut"}} className={`relative flex flex-col items-center bottom-5 justify-center min-h-screen mt-20`}>
+        <motion.section initial={{opacity:0}} whileInView={{opacity:[0.3, 0.5, 0.7, 0.8, 1]}} transition={{duration:0.7, delay:0, ease:"easeInOut"}} className={`relative flex flex-col items-center bottom-5 justify-center min-h-screen my-10`}>
 
             <div className="absolute  inset-0 inset-y-[-10%] bg-[url('/durgas-video-1.png')] bg-no-repeat bg-center bg-cover bg-fixed filter brightness-80 contrast-70 opacity-80 "></div>
                 
@@ -26,10 +26,16 @@ export default function Introduce({burgerClicked, setBurgerClicked}) {
                     Ensamble femenino de percusión latinoamericana
                 </h1>
 
-                <div className="flex gap-3 mt-4">
-                    <FaYoutube size={35} color="red" />
-                    <FaSpotify size={35} color="green" />
-                    <FaInstagram size={35} color="pink" />
+                <div className="flex gap-3 mt-4 mb-30 lg:gap-6 lg:mt-10">
+                    <motion.button whileHover={{scale:1.2, transition:{duration:0.1} }} transition={{duration:0.9}}>
+                        <FaYoutube className="cursor-pointer" size={35} color="red" />
+                    </motion.button>                  
+                    <motion.button whileHover={{scale:1.2, transition:{duration:0.1} }} transition={{duration:0.9}}>
+                        <FaSpotify className="cursor-pointer" size={35} color="green" />
+                    </motion.button>                    
+                    <motion.button whileHover={{scale:1.2, transition:{duration:0.1} }} transition={{duration:0.9}}>
+                        <FaInstagram className="cursor-pointer" size={35} color="pink" />
+                    </motion.button>
                 </div>
 
             </div>

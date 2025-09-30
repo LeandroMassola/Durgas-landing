@@ -18,15 +18,15 @@ export default function Story({parallaxY}) {
 
 
             {/* Capa media */}
-            <motion.div className="absolute h-[200%] inset-0 bg-gradient-to-t from-[var(--andorra)]/80 via-[var(--sudanBrown)] to-[var(--spectraYellow)] mix-blend-overlay" initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.7, delay:1}}
+            <motion.div className="absolute h-[200%]  inset-0 bg-gradient-to-t from-[var(--andorra)]/80 via-[var(--sudanBrown)] to-[var(--spectraYellow)] mix-blend-overlay" initial={{opacity:0}} animate={{opacity:1}} transition={{duration:0.7, delay:1}}
             />
 
             {/* Capa alta */}
 
             <motion.div className="absolute h-[150%] inset-0 bg-[url('/durgas-abrazo.png')] bg-no-repeat bg-cover bg-center bg-fixed" initial={{opacity:0}} animate={{opacity:0.5}} transition={{duration:0.7, delay:1}}/>
 
-            <article className="relative z-10 pt-15 rounded-md bg-black/30 mb-25 pb-15">
-                <div className="mb-20 text-[var(--afterglow)]">
+            <article className="relative z-10 px-20 py-15 rounded-md bg-black/30 mb-25 pb-15">
+                <div className="mb-20 text-[var(--afterglow)] lg:mt-20 lg:mb-20">
                     <h1 className="text-7xl text-center px-3 tracking-wide">¿Quiénes son Las Durgas?</h1>
                 </div>
                 <motion.div initial={{opacity:0}} whileInView={{opacity:1}} viewport={{once:false}} transition={{duration:2, delay:1}} className="flex flex-col gap-5 text-[var(--afterglow)] text-2xl px-5 tracking-wider">
