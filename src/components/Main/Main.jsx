@@ -1,11 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 import {motion} from "framer-motion"
-import Header from "./Header/Header";
-import Welcome from "./Hero/Welcome";
-import LogoDurgas from "./LogoDurgas";
-import Introduce from "./Hero/Introduce";
-import Story from "./Story/Story";
-import Carousel from "./Gallery/Carousel";
+import Introduce from "./Hero/Introduce.jsx";
+import Story from "./Story/Story.jsx";
+import Carousel from "./Gallery/Carousel.jsx";
 import { MdKeyboardArrowRight as ArrowRight } from "react-icons/md";
 import { MdKeyboardArrowLeft as ArrowLeft } from "react-icons/md";
 import { useScroll } from "motion/react";
