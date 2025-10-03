@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Durgas'; 
+    src: url('/public/CALPHI_T.otf') format('truetype'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+:root {
+
+    --afterglow: #F3E6C9;
+    --greenFlash: #78C753;
+    --lavender: #AFA4CE;
+    --sudanBrown: #AC6C29;
+    --andorra: #603535;
+    --lavenderLight: #afa4ce85; 
+    --spectraYellow: #F7B718;
+    --bog: #BAB696;
+    --barelyPink: #F8D7DD;
+}
+    
+body {
+    font-family: 'Durgas';
+}
+
