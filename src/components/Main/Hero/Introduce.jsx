@@ -9,7 +9,7 @@ export default function Introduce({burgerClicked, setBurgerClicked}) {
     return (
         <motion.section initial={{opacity:0}} whileInView={{opacity:[0.3, 0.5, 0.7, 0.8, 1]}} transition={{duration:0.7, delay:0, ease:"easeInOut"}} className={`relative flex flex-col items-center bottom-5 justify-center min-h-screen my-10`}>
 
-            <div className="absolute  inset-0 inset-y-[-10%] bg-[url('/durgas-video-1.png')] bg-no-repeat bg-center bg-cover bg-fixed filter brightness-80 contrast-70 opacity-80 "></div>
+            <div className="absolute  inset-0 inset-y-[-10%] bg-[url('/images/durgas-home.png')] bg-no-repeat bg-center bg-cover bg-fixed filter brightness-80 contrast-70 opacity-80 "></div>
                 
 
             {/* <div className=" inset-0 inset-y-[-10%] brightness-80 fixed contrast-70 opacity-80 ">
