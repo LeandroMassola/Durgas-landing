@@ -7,7 +7,7 @@ import { MdKeyboardArrowRight as ArrowRight } from "react-icons/md";
 import { MdKeyboardArrowLeft as ArrowLeft } from "react-icons/md";
 import { useScroll } from "motion/react";
 import Form from "./Contact/Form";
-import Burger from "./Header/Burger";
+import Burger from "./Header/Burger.jsx";
 
 
 
