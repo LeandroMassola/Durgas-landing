@@ -25,7 +25,7 @@ export default function Carousel({scrollY, setScroll, setIsClicked, setImgPicked
                         whileInView={{scaleY:1, scaleZ:1}} 
                         transition={{duration:0.7, delay:0.2}} 
                         key={i} onClick={()=>handleClicked(i)} 
-                        className={`z-50 rounded-lg shadow-[#F3E6C9] shadow-sm aspect-auto w-full h-full lg:h-auto lg:cursor-pointer`} id={i} src={image}
+                        className={`z-50 rounded-lg shadow-[#F3E6C9] shadow-sm aspect-auto w-full h-auto lg:h-auto lg:cursor-pointer`} id={i} src={image}
                         whileHover={{scale:1.2, transition:{duration:0.5, delay:0.3}, filter:" grayscale(100%)" }}
                         />
                     )
