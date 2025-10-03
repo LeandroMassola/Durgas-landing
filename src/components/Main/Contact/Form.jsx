@@ -1,6 +1,6 @@
 import { useState } from "react"
 import {motion} from "framer-motion"
-import validations from "./validationForm"
+import validations from "../../../validations/validationForm"
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm, Controller } from "react-hook-form";
 
@@ -71,7 +71,7 @@ export default function Form() {
     return(
         <section name={"contact"} className=" absolute w-full bg-gradient-to-b from-[var(--afterglow)] via-[var(--afterglow)]/20 to-[var(--afterglow)]/40 py-10 text-[var(--andorra)] xl:grid xl:grid-cols-2 xl:w-full">
 
-            <div className="absolute inset-0 bg-[url('/durgas-mail.png')] bg-cover bg-center bg-no-repeat bg-fixed z-0"/>
+            <div className="absolute inset-0 bg-[url('/images/durgas-mail.png')] bg-cover bg-center bg-no-repeat bg-fixed z-0"/>
             <div className="absolute inset-0 bg-gradient-to-b from-[var(--lavenderLight)]/30 via-[var(--spectraYellow)]/20 to-[var(--afterglow)]/40 py-10 text-[var(--afterglow)] w-full h-full z-0"/>
             <h1 className="text-center text-5xl z-50 relative mt-20 text-[var(--afterglow)] sm:text-6xl md:text-7xl xl:self-center xl:pb-10">Escribínos!</h1>
 
